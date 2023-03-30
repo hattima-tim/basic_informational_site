@@ -1,0 +1,66 @@
+header {
+  position: absolute;
+  top: 20px;
+  left: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  z-index: 1;
+}
+
+header a {
+  text-decoration: none;
+  color: white;
+}
+
+h1 {
+  padding: 0px;
+  margin: 0px;
+}
+
+h1 a {
+  color: #db504a;
+}
+
+nav {
+  z-index: 1;
+}
+
+nav ul {
+  list-style: none;
+  margin-right: 5rem;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+li a {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(https://www.housedigest.com/img/gallery/this-rare-oak-tree-was-thought-to-be-extinct-for-over-a-decade/l-intro-1657886086.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.background-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.17);
+}
