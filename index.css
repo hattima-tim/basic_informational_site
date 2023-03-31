@@ -40,7 +40,7 @@ li a {
 }
 
 .background-image {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -59,4 +59,29 @@ li a {
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.17);
+}
+
+@media screen and (max-width: 480px) {
+  header {
+    left: 0.5rem;
+    gap: 2rem;
+    width: 0px;
+  }
+
+  h1 {
+    font-size: 5rem;
+  }
+
+  nav ul {
+    margin-right: 0.5rem;
+  }
+
+  nav li {
+    margin-bottom: 0.5rem;
+    margin-right: 0px;
+  }
+
+  .background-image::before {
+    background-color: rgba(0, 0, 0, 0.25);
+  }
 }
