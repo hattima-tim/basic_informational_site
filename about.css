@@ -1,0 +1,69 @@
+header {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+header a {
+  text-decoration: none;
+  color: black;
+}
+
+h1 {
+  padding: 0px;
+  margin: 0px;
+}
+
+h1 a {
+  color: #db504a;
+}
+
+nav ul {
+  list-style: none;
+  margin-right: 1rem;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+li a {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+h2{
+    text-align: center;
+}
+
+article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+    gap: 1rem;
+}
+
+p{
+  margin: 0px;
+}
+
+cite{
+  align-self: flex-end;
+}
+
+.oak_tree_logo_img{
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+}
+
+@media screen and (min-width: 1024px) {
+    article{
+        margin: 0 20rem;
+        font-size: 1.1rem;
+    }
+}
