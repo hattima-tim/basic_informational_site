@@ -7,13 +7,13 @@ http
     let fileName;
     switch (req.url) {
       case "/":
-        fileName = "./index.html";
+        fileName = "./pages/index.html";
         break;
       case "/about":
-        fileName = "./about.html";
+        fileName = "./pages/about.html";
         break;
       case "/conservation":
-        fileName = "./conservation.html";
+        fileName = "./pages/conservation.html";
         break;
       default:
         fileName = "." + req.url;
