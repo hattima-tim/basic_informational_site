@@ -4,7 +4,21 @@ const path = require("path");
 
 http
   .createServer(async (req, res) => {
-    let pathname = req.url === "/" ? "./index.html" : "." + req.url;
+    let fileName;
+    switch (req.url) {
+      case "/":
+        fileName = "./index.html";
+        break;
+      case "/about":
+        fileName = "./about.html";
+        break;
+      case "/conservation":
+        fileName = "./conservation.html";
+        break;
+      default:
+        fileName = "." + req.url;
+        break;
+    }
 
     const extname = path.extname(req.url);
     let contentType = "text/html";
@@ -13,7 +27,7 @@ http
     }
 
     try {
-      const data = await fs.readFile(pathname, { encoding: "utf8" });
+      const data = await fs.readFile(fileName, { encoding: "utf8" });
       res.writeHeader(200, { "Content-Type": contentType });
       res.write(data);
       res.end();
