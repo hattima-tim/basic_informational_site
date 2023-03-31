@@ -4,7 +4,7 @@ This is a basic informational site about Oak Tree.
 
 Built as an assignment for [The Odin Project](https://github.com/TheOdinProject/curriculum) .
 
-Details of the assignment can be found [here](https://www.theodinproject.com/lessons/nodejs-basic-informational-site#submitting-a-solution) .
+Details of the assignment can be found [here](https://www.theodinproject.com/lessons/nodejs-basic-informational-site) .
 
 See the project live [here](https://basicinformationalsite.hello12world.repl.co) .
 
