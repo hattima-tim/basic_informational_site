@@ -1,10 +1,9 @@
 header {
   position: absolute;
   top: 20px;
-  left: 2rem;
+  right: 1rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   width: 100%;
   z-index: 1;
 }
@@ -15,8 +14,9 @@ header a {
 }
 
 h1 {
+  font-size: 3rem;
   padding: 0px;
-  margin: 0px;
+  margin: 0px 0px 0px 2rem;
 }
 
 h1 a {
@@ -25,13 +25,13 @@ h1 a {
 
 nav ul {
   list-style: none;
-  margin-right: 3rem;
+  margin-right: 2rem;
   padding: 0;
 }
 
 nav li {
   display: inline-block;
-  margin-right: 10px;
+  margin-left: 10px;
 }
 
 li a {
@@ -58,22 +58,24 @@ li a {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.17);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 @media screen and (max-width: 480px) {
   header {
     left: 0.5rem;
+    right: 0rem;
     gap: 2rem;
     width: 0px;
   }
 
   h1 {
     font-size: 5rem;
+    margin-left: 0px;
   }
 
   nav ul {
-    margin-right: 0.5rem;
+    margin-right: 0rem;
   }
 
   nav li {
