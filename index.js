@@ -12,9 +12,7 @@ const sendFile = (res, fileName) => {
   res.sendFile(fileName, options, (err) => {
     if (err) {
       res.status(404).send("Something is wrong");
-      res.end();
     }
-    res.end();
   });
 };
 
