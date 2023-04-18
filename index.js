@@ -11,7 +11,7 @@ const options = {
 const sendFile = (res, fileName) => {
   res.sendFile(fileName, options, (err) => {
     if (err) {
-      res.status(400).send("Something is wrong");
+      res.status(404).send("Something is wrong");
       res.end();
     }
     res.end();
