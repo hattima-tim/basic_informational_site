@@ -1,41 +1,38 @@
-const http = require("http");
-const fs = require("fs/promises");
-const path = require("path");
+const express = require("express");
+const app = express();
+const port = 3000;
 
-http
-  .createServer(async (req, res) => {
-    let fileName;
-    switch (req.url) {
-      case "/":
-        fileName = "./pages/index.html";
-        break;
-      case "/about":
-        fileName = "./pages/about.html";
-        break;
-      case "/conservation":
-        fileName = "./pages/conservation.html";
-        break;
-      default:
-        fileName = "." + req.url;
-        break;
-    }
+app.use(express.static("styles"));
 
-    const extname = path.extname(req.url);
-    let contentType = "text/html";
-    if (extname) {
-      contentType = `text/${extname.slice(1)}`;
-    }
+const options = {
+  root: __dirname,
+};
 
-    try {
-      const data = await fs.readFile(fileName, { encoding: "utf8" });
-      res.writeHeader(200, { "Content-Type": contentType });
-      res.write(data);
-      res.end();
-    } catch (err) {
-      res.write("err");
+const sendFile = (res, fileName) => {
+  res.sendFile(fileName, options, (err) => {
+    if (err) {
+      res.status(400).send("Something is wrong");
       res.end();
     }
-  })
-  .listen(8080, () => {
-    console.log("running");
+    res.end();
   });
+};
+
+app.get("/", (req, res) => {
+  const fileName = "./pages/index.html";
+  sendFile(res, fileName);
+});
+
+app.get("/conservation", (req, res) => {
+  const fileName = "./pages/conservation.html";
+  sendFile(res, fileName);
+});
+
+app.get("/about", (req, res) => {
+  const fileName = "./pages/about.html";
+  sendFile(res, fileName);
+});
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}!`);
+});
